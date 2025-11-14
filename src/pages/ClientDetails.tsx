@@ -1,6 +1,8 @@
 import React from 'react';
 import { useParams, Navigate, Link } from 'react-router-dom';
 import { useClients } from '../context/ClientContext';
+import { AddProjectForm } from '../components/AddProjectForm';
+import { ProjectList } from '../components/ProjectList';
 
 export const ClientDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -38,7 +40,8 @@ export const ClientDetails: React.FC = () => {
 
       <section className="mt-8 pt-4 border-t border-gray-200">
         <h3 className="text-xl font-semibold mb-4">Projekty ({client.projects.length})</h3>
-        <p className="italic text-gray-500">Miejsce na listę i formularz dodawania projektów.</p>
+        <ProjectList projects={client.projects}/>
+        <AddProjectForm clientId={client.id}/>
       </section>
     </div>
   );
