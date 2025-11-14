@@ -25,4 +25,4 @@ export const useLocalStorage = <T>(key: string, defaultValue: T): [T, Dispatch<S
   }, [value, key]);
 
   return [value, setValue];
-}
+};

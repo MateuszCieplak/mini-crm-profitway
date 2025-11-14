@@ -2,6 +2,7 @@ import React from 'react';
 import { HomePage } from './pages/HomePage';
 import { Route, Routes } from 'react-router-dom';
 import { ClientDetails } from './pages/ClientDetails';
+import { SummaryTotalMetrics } from './components/SummaryTotalMetrics';
 
 const App: React.FC = () => {
   return (
@@ -12,7 +13,12 @@ const App: React.FC = () => {
 
       <main className="container mx-auto">
         <Routes>
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={
+            <>
+              <SummaryTotalMetrics />
+              <HomePage />
+            </>
+          } />
           <Route path="/client/:id" element={<ClientDetails />} />
         </Routes>
       </main>
