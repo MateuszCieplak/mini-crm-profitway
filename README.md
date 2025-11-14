@@ -30,7 +30,7 @@ Aby uruchomić projekt lokalnie, wykonaj poniższe kroki w terminalu:
 ### 1. Klonowanie Repozytorium
 
 ```bash
-git clone [ADRES_TWOJEGO_REPOZYTORIUM]
+git clone https://github.com/MateuszCieplak/mini-crm-profitway.git
 cd mini-crm-frontend
 ```
 ### 2. Instalacja Zależności
