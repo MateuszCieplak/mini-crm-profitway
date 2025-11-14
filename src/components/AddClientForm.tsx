@@ -42,7 +42,7 @@ export const AddClientForm: React.FC = () => {
   };
 
   return(
-<form onSubmit={handleSubmit} className="p-6 bg-white shadow-xl rounded-lg max-w-md mx-auto">
+    <form onSubmit={handleSubmit} className="p-6 bg-white shadow-xl rounded-lg max-w-md mx-auto md:max-w-4xl">
       <h3 className="text-2xl font-bold mb-6 text-gray-800 border-b pb-2">Dodaj Nowego Klienta</h3>
 
       <div className="mb-4">
@@ -54,7 +54,7 @@ export const AddClientForm: React.FC = () => {
           value={formData.name}
           onChange={handleChange}
           required
-          placeholder="Acme Corporation"
+          placeholder="Corporation Name"
           className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring-blue-500 focus:border-blue-500 transition duration-150"
         />
       </div>

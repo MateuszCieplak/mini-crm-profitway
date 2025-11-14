@@ -51,6 +51,7 @@ export const AddProjectForm: React.FC<Props> = ({ clientId }) => {
                         value={formData.name}
                         onChange={handleChange}
                         required
+                        placeholder='Project Name'
                         className="mt-1 block w-full border border-gray-300 rounded-md p-2 text-sm"
                     />
                 </div>
@@ -65,6 +66,7 @@ export const AddProjectForm: React.FC<Props> = ({ clientId }) => {
                         min="0.01"
                         step="0.01"
                         required
+                        placeholder='0.00'
                         className="mt-1 block w-full border border-gray-300 rounded-md p-2 text-sm"
                     />
                 </div>
