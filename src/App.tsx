@@ -1,6 +1,7 @@
 import React from 'react';
-import {AddClientForm} from './components/AddClientForm';
-import {ClientList} from './components/ClientList';
+import { HomePage } from './pages/HomePage';
+import { Route, Routes } from 'react-router-dom';
+import { ClientDetails } from './pages/ClientDetails';
 
 const App: React.FC = () => {
   return (
@@ -10,15 +11,10 @@ const App: React.FC = () => {
       </header>
 
       <main className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div>
-              <AddClientForm />
-            </div>
-
-            <div>
-              <ClientList />
-            </div>
-        </div>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/client/:id" element={<ClientDetails />} />
+        </Routes>
       </main>
     </div>
   )
