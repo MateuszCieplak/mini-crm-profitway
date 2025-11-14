@@ -1,73 +1,53 @@
-# React + TypeScript + Vite
+# 🚀 Mini CRM - Zarządzanie Klientami i Projektami
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Cel Projektu
 
-Currently, two official plugins are available:
+Prosta aplikacja **Mini CRM** stworzona w ramach Zadania Rekrutacyjnego, przeznaczona do zarządzania bazą klientów oraz ich projektami. Kluczowym celem było zaimplementowanie **działającej logiki stanu**, **trwałości danych** oraz **czystej struktury kodu** z wykorzystaniem nowoczesnych technologii frontendowych.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologie
 
-## React Compiler
+* **Frontend Framework:** React
+* **Język:** TypeScript
+* **Bundler:** Vite
+* **Stylizacja:** Tailwind CSS
+* **Zarządzanie Stanem:** React Context API + Custom Hook (`useLocalStorage`)
+* **Routing:** React Router DOM
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Główne Funkcje
 
-## Expanding the ESLint configuration
+Aplikacja zaimplementowała następujące wymagania:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1.  **Dashboard:** Podsumowanie metryk biznesowych (łączna wartość PLN, łączna liczba projektów, liczba klientów).
+2.  **Klienci:** Lista z możliwością dodawania nowych klientów.
+3.  **Szczegóły Klienta:** Widok szczegółów klienta z listą projektów.
+4.  **Projekty:** Możliwość dodawania nowych projektów do konkretnego klienta.
+5.  **Trwałość Danych:** Wszystkie dane są automatycznie zapisywane w **Local Storage** przeglądarki.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ Uruchomienie Projektu
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Aby uruchomić projekt lokalnie, wykonaj poniższe kroki w terminalu:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Klonowanie Repozytorium
+
+```bash
+git clone [ADRES_TWOJEGO_REPOZYTORIUM]
+cd mini-crm-frontend
 ```
+### 2. Instalacja Zależności
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Zainstaluj wszystkie wymagane pakiety Node.js
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
 ```
+npm install
+```
+### 3. Uruchamianie Aplikacji
+
+Uruchom serwer deweloperski. Aplikacja będzie dostępna pod adresem http://localhost:5173/ (lub innym adresem wskazanym przez Vite).
+
+```
+npm run dev
+```
+##📝 Uwagi dla Recenzenta
+
+* **Git Hygiene:** Zastosowano konwencję Conventional Commits (feat:, fix:, refactor:) w celu utrzymania czytelnej historii zmian.
+* **Architektura** Logika zarządzania stanem jest odseparowana (Context/Hooks) od komponentów UI.
